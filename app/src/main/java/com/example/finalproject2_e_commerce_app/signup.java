@@ -25,6 +25,7 @@ public class signup extends AppCompatActivity {
         signup_fullname = findViewById(R.id.editText_signup_fullname);
         signup_number = findViewById(R.id.editText_signup_mobilenumber);
         signup_password = findViewById(R.id.editText_signup_password);
+
         bt_signup = findViewById(R.id.button_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,31 +59,6 @@ public class signup extends AppCompatActivity {
             String signuppasswordstr = signup_password.getText().toString().trim();
 
             bt_signup.setEnabled(!signupusernamestr.isEmpty() && (!signupfullnamestr.isEmpty() && (!signupnumberstr.isEmpty() && !signuppasswordstr.isEmpty())));
-
-//            if(!signupusernamestr.isEmpty()){
-//                if(!signupfullnamestr.isEmpty()){
-//                    if(!signupnumberstr.isEmpty()){
-//                        if(!signuppasswordstr.isEmpty()){
-//                            int duration = Toast.LENGTH_SHORT;
-//                            Toast toast = Toast.makeText(getApplicationContext(),"bisa",duration);
-//                            toast.show();
-////                            bt_signup.setEnabled(true);
-//                        }
-//                    }
-//                }
-//            }
-//            int duration = Toast.LENGTH_SHORT;
-//            Toast toaster = Toast.makeText(getApplicationContext(),"ganti",duration);
-//            toaster.show();
-//
-//            Boolean compare1 = !signupusernamestr.isEmpty() && !signupfullnamestr.isEmpty();
-//            Boolean compare2 = !signupnumberstr.isEmpty() && !signuppasswordstr.isEmpty();
-//            if(compare1 && compare2){
-//
-//                Toast toast = Toast.makeText(getApplicationContext(),"bisa",duration);
-//                toast.show();
-//            }
-//            bt_signup.setEnabled(compare1 && compare2);
 
         }
 

@@ -8,6 +8,43 @@
     android:background="#F7FBFF"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView_aboutus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="about us"
+        android:textColor="#133962"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_stafflogin" />
+
+    <TextView
+        android:id="@+id/textView_adminlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="256dp"
+        android:fontFamily="@font/poppins"
+        android:text="admin login"
+        android:textColor="#133962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <TextView
+        android:id="@+id/textView_stafflogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="85dp"
+        android:fontFamily="@font/poppins"
+        android:text="staff login"
+        android:textColor="#133962"
+        app:layout_constraintEnd_toStartOf="@+id/textView_aboutus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_adminlogin"
+        app:layout_constraintTop_toTopOf="@+id/textView_adminlogin" />
+
     <EditText
         android:id="@+id/editText_login_password"
         android:layout_width="340dp"
@@ -64,8 +101,8 @@
         android:id="@+id/textView_createaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/poppins"
         android:text="Create an account"
         android:textColor="@color/black"

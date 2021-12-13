@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText et_username,et_password;
     private Button bt_login;
-    private TextView createacc;
+    private TextView createacc,stafflogin,adminlogin,aboutus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         createacc=findViewById(R.id.textView_createaccount);
         createacc.setOnClickListener(this);
+
+        stafflogin=findViewById(R.id.textView_stafflogin);
+        stafflogin.setOnClickListener(this);
 
         bt_login=findViewById(R.id.button_login);
         bt_login.setOnClickListener(this);
@@ -63,12 +66,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Ganti jadi intent ke class home page
                 Intent login = new Intent(getApplicationContext(),signup.class);
                 startActivity(login);
-
                 break;
+
             case R.id.textView_createaccount:
                 Intent createacc = new Intent(getApplicationContext(),signup.class);
                 startActivity(createacc);
+                break;
 
+            case R.id.textView_stafflogin:
+                Intent stafflogint = new Intent(getApplicationContext(),stafflogin.class);
+                startActivity(stafflogint);
                 break;
         }
 

@@ -118,7 +118,7 @@
         android:layout_marginEnd="90dp"
         android:fontFamily="@font/poppins"
         android:text="Sign up to start shopping with us"
-        android:textColor="#515151"
+        android:textColor="#3C3F41"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
