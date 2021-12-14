@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject2_ECommerceApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".EditBarangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BarangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MenuAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
