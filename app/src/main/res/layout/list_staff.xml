@@ -6,12 +6,19 @@
     android:background="@drawable/rounded_list"
     android:layout_marginBottom="10dp"
     >
-
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"
+        style="@style/main_text"
+        />
+    <!--android:foreground="@drawable/rounded_image"-->
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/dummy_photo"
-        android:foreground="@drawable/rounded_image"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         />
@@ -24,12 +31,14 @@
         >
 
         <TextView
+            android:id="@+id/tv_namaS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bocil Kematian"
             style="@style/main_text"
             />
         <TextView
+            android:id="@+id/tv_jabatan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Admin"

@@ -28,6 +28,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/back_btn"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
@@ -37,6 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <ListView
+        android:id="@+id/list_staff"
         android:layout_width="match_parent"
         android:layout_height="770dp"
         tools:listitem="@layout/list_staff"
@@ -48,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/flButton"
+        android:id="@+id/fb_staff"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"

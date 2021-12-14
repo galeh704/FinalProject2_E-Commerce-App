@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="dp"
+
             >
             <TextView
                 android:text="Nama Produk "
@@ -85,7 +85,7 @@
                     style="@style/text"/>
                 <EditText
                     android:layout_width="170dp"
-                    android:inputType="email"
+                    android:inputType="text"
                     android:background="@drawable/bg_et"
                     style="@style/et_main"
                     />
@@ -101,7 +101,7 @@
                     style="@style/text"/>
                 <EditText
                     android:layout_width="60dp"
-                    android:inputType="email"
+                    android:inputType="text"
                     android:background="@drawable/bg_et"
                     style="@style/et_main"
                     />

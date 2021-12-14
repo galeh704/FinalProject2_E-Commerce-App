@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EditStaffActivity">
+
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -29,17 +32,54 @@
     </LinearLayout>
 
 
+    <!--<TextView
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="16sp"
+        style="@style/text"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+
+        android:textSize="16sp"
+        style="@style/text"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
     <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+      >
+        <EditText
+        android:id="@+id/et_idS"
+        android:background="@drawable/bg_et"
+        style="@style/et_main"
+            android:visibility="gone"
+        />
 
         <ImageView
+            android:id="@+id/img_staff"
             android:layout_width="150dp"
             android:layout_height="150dp"
             tools:src="@drawable/dummy_photo"/>
@@ -53,6 +93,7 @@
                 android:text="Nama "
                 style="@style/text"/>
             <EditText
+                android:id="@+id/et_namaS"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -67,6 +108,7 @@
                 android:text="Status "
                 style="@style/text"/>
             <EditText
+                android:id="@+id/et_jabatanS"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -81,7 +123,7 @@
                 android:text="Email "
                 style="@style/text"/>
             <EditText
-                android:inputType="email"
+                android:id="@+id/et_emailS"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -96,7 +138,7 @@
                 android:text="Password "
                 style="@style/text"/>
             <EditText
-                android:inputType="password"
+                android:id="@+id/et_passwordS"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -111,16 +153,33 @@
                 android:text="Kontak "
                 style="@style/text"/>
             <EditText
+                android:id="@+id/et_kontakS"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_select"
+            android:text="Select"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_btn_main"
+            style="@style/btn_main"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_btn_main"
+            style="@style/btn_main"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edit"
             android:text="Save"
             android:textAllCaps="false"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_btn_main"
             style="@style/btn_main"/>
     </LinearLayout>
-</LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
