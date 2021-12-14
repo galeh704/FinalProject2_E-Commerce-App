@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stafflogin=findViewById(R.id.textView_stafflogin);
         stafflogin.setOnClickListener(this);
 
+        adminlogin=findViewById(R.id.textView_adminlogin);
+        adminlogin.setOnClickListener(this);
+
+        aboutus=findViewById(R.id.textView_aboutus);
+        aboutus.setOnClickListener(this);
+
         bt_login=findViewById(R.id.button_login);
         bt_login.setOnClickListener(this);
 
@@ -76,6 +82,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.textView_stafflogin:
                 Intent stafflogint = new Intent(getApplicationContext(),stafflogin.class);
                 startActivity(stafflogint);
+                break;
+
+            case R.id.textView_adminlogin:
+                Intent adminlogint = new Intent(getApplicationContext(),adminlogin.class);
+                startActivity(adminlogint);
+                break;
+
+            case R.id.textView_aboutus:
+                Intent aboutusint = new Intent(getApplicationContext(),aboutus.class);
+                startActivity(aboutusint);
                 break;
         }
 

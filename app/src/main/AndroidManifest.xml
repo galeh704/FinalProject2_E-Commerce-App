@@ -10,13 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject2_ECommerceApp">
         <activity
+            android:name=".aboutus"
+            android:exported="true"
+            android:label="About Us"/>
+        <activity
+            android:name=".adminlogin"
+            android:exported="true"
+            android:label="Admin"/>
+        <activity
             android:name=".successfullogin"
             android:exported="true"
-            android:label="Sucessful Login"/>
+            android:label="Sucessful Login" />
         <activity
             android:name=".stafflogin"
             android:exported="true"
-            android:label="Staff"/>
+            android:label="Staff" />
         <activity
             android:name=".signup"
             android:exported="true"
