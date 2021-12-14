@@ -175,7 +175,7 @@
             style="@style/btn_main"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_edit"
-            android:text="Save"
+            android:text="Edit"
             android:textAllCaps="false"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_btn_main"
