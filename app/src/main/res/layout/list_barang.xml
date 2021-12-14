@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_list"
+    android:layout_marginBottom="10dp"
+    >
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/dummy_photo2"
+        android:foreground="@drawable/rounded_image"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        >
+
+        <TextView
+
+            android:text="Sepatu merah keren , nyaman"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/main_text"
+            />
+
+        <TextView
+            android:text="Rp 2.847.000"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#0A7808"
+            style="@style/main_text"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        >
+
+        <TextView
+            android:fontFamily="@font/poppins_medium"
+            style="@style/main_text"
+            android:text="Stock"
+            />
+        <TextView
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/main_text"
+            android:text="20"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
