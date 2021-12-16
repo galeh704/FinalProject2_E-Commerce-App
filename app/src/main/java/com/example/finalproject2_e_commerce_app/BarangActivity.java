@@ -65,17 +65,14 @@ public class BarangActivity extends AppCompatActivity {
 
                         switch (i){
                             case 0:
-                                startActivity(new Intent(getApplicationContext(),EditBarangActivity.class).putExtra("position",ia));
+                                startActivity(new Intent(getApplicationContext(), EditProductActivity.class).putExtra("position",ia));
                                 break;
                             case 1:
-
-
                                 break;
 
                         }
 
                     }
-
                 });
                 builder.create().show();
 

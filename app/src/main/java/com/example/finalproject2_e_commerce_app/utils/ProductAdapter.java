@@ -32,9 +32,13 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
         TextView product_nama = view.findViewById(R.id.tv_nama_prd);
         TextView product_id = view.findViewById(R.id.tv_id_prd);
+        TextView product_harga = view.findViewById(R.id.tv_harga);
+        TextView product_stock = view.findViewById(R.id.tv_stock_product);
 
         product_id.setText(arrayListProduct.get(position).getIdProduct());
         product_nama.setText(arrayListProduct.get(position).getNamaProduct());
+        product_harga.setText(arrayListProduct.get(position).getHarga());
+        product_stock.setText(arrayListProduct.get(position).getStock());
 
         return view;
     }

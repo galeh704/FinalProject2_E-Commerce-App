@@ -30,12 +30,6 @@ public class BarangAdapter extends ArrayAdapter<Barang> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_barang1, null, true);
 
-        TextView barang_nama = view.findViewById(R.id.tv_namap);
-        TextView barang_id = view.findViewById(R.id.tv_idp);
-
-
-        barang_id.setText(arrayListBarang.get(position).getIdBarang());
-        barang_nama.setText(arrayListBarang.get(position).getNamaBarang());
 
 
         return view;

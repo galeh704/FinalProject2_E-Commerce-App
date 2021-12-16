@@ -1,5 +1,6 @@
 package com.example.finalproject2_e_commerce_app;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,6 +30,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -63,11 +67,10 @@ public class ProductActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
                             case 0:
-                                startActivity(new Intent(getApplicationContext(),ProductActivity.class).putExtra("position",position));
+                                startActivity(new Intent(getApplicationContext(),EditProductActivity.class).putExtra("position",position));
                                 break;
                             case 1:
-
-
+                                deleteData(productArrayList.get(position).getIdProduct());
                                 break;
 
                         }
@@ -88,7 +91,7 @@ public class ProductActivity extends AppCompatActivity {
         fb_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goEdit = new Intent(ProductActivity.this, EditBarangActivity.class);
+                Intent goEdit = new Intent(ProductActivity.this, EditProductActivity.class);
                 startActivity(goEdit);
 
             }
@@ -137,6 +140,37 @@ public class ProductActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
 
+    }
+
+    private  void deleteData(String idProduct){
+        StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/deleteProduct.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                    if(response.equalsIgnoreCase("data terhapus")){
+                        Toast.makeText(ProductActivity.this, "Data suskes terhapus", Toast.LENGTH_SHORT).show();
+                    } else{
+                        Toast.makeText(ProductActivity.this, "Data gagal", Toast.LENGTH_SHORT).show();
+                    }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("idProduct", idProduct);
+
+                return params;
+            }
+
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(ProductActivity.this);
+        requestQueue.add(request);
     }
 
 }

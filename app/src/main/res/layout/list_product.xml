@@ -18,12 +18,12 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/dummy_photo"
+        android:src="@drawable/dummy_photo2"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
@@ -37,8 +37,35 @@
             android:text="Bocil Kematian"
             style="@style/main_text"
             />
+        <TextView
+            android:id="@+id/tv_harga"
+            android:text="Rp 2.847.000"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#0A7808"
+            style="@style/main_text"
+            />
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        >
 
+        <TextView
+            android:fontFamily="@font/poppins_medium"
+            style="@style/main_text"
+            android:text="Stock"
+            />
+        <TextView
+            android:id="@+id/tv_stock_product"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/main_text"
+            android:text="20"
+            />
     </LinearLayout>
 
 

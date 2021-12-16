@@ -17,7 +17,7 @@
             android:name=".ProductActivity"
             android:exported="false" />
         <activity
-            android:name=".EditBarangActivity"
+            android:name=".EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".AddBarangActivity"
