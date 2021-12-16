@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EditStaffActivity">
-
+    tools:context=".AddBarangActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-          >
+            >
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -33,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Insert List Staff"
+            android:text="Insert List Barang"
             android:layout_gravity="center_vertical|center"
             android:gravity="center"
             android:textColor="@color/white"
@@ -42,65 +41,29 @@
     </LinearLayout>
 
 
-    <!--<TextView
-        android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        android:textSize="16sp"
-        style="@style/text"
-
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-    <TextView
-        android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancel"
-
-        android:textSize="16sp"
-        style="@style/text"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-    -->
-
-
     <LinearLayout
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-      >
-        <EditText
-        android:id="@+id/et_idS"
-        android:background="@drawable/bg_et"
-        style="@style/et_main"
-            android:visibility="gone"
-        />
 
-        <ImageView
-            android:id="@+id/img_staff"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            tools:src="@drawable/dummy_photo"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
+
             >
             <TextView
-                android:text="Nama "
+
+                android:text="Nama Produk "
                 style="@style/text"/>
             <EditText
-                android:id="@+id/et_namaS"
+                android:id="@+id/et_namaP"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -112,10 +75,70 @@
             android:layout_marginTop="8dp"
             >
             <TextView
-                android:text="Status "
+                android:text="Kategori "
                 style="@style/text"/>
             <EditText
-                android:id="@+id/et_jabatanS"
+                android:id="@+id/et_kategoriP"
+                android:background="@drawable/bg_et"
+                style="@style/et_main"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:text="Harga "
+                    style="@style/text"/>
+                <EditText
+                    android:id="@+id/et_hargaP"
+                    android:layout_width="170dp"
+                    android:inputType="text"
+                    android:background="@drawable/bg_et"
+                    style="@style/et_main"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                >
+                <TextView
+                    android:text="Stock "
+                    style="@style/text"/>
+                <EditText
+                    android:id="@+id/et_stockP"
+                    android:layout_width="60dp"
+                    android:inputType="text"
+                    android:background="@drawable/bg_et"
+                    style="@style/et_main"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            >
+            <TextView
+                android:text="Deskripsi "
+                style="@style/text"/>
+            <EditText
+                android:id="@+id/et_deskripsi"
+                android:layout_height="120dp"
+                android:inputType="textMultiLine"
+
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -127,43 +150,14 @@
             android:layout_marginTop="8dp"
             >
             <TextView
-                android:text="Email "
+                android:text="Foto Barang "
                 style="@style/text"/>
-            <EditText
-                android:id="@+id/et_emailS"
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
-            >
-            <TextView
-                android:text="Password "
-                style="@style/text"/>
-            <EditText
-                android:id="@+id/et_passwordS"
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
-            >
-            <TextView
-                android:text="Kontak "
-                style="@style/text"/>
-            <EditText
-                android:id="@+id/et_kontakS"
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
+            <ImageView
+                android:id="@+id/img_barang"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                tools:src="@drawable/dummy_photo2"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -180,15 +174,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_btn_main"
             style="@style/btn_main"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_edit"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_btn_main"
-            style="@style/btn_main"/>
     </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

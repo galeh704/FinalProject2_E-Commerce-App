@@ -19,10 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.finalproject2_e_commerce_app.list.Barang;
-
-import com.example.finalproject2_e_commerce_app.utils.BarangAdapter;
-
+import com.example.finalproject2_e_commerce_app.list.Product;
+import com.example.finalproject2_e_commerce_app.utils.ProductAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -31,41 +29,41 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class BarangActivity extends AppCompatActivity {
-    ListView list_barangg;
-    FloatingActionButton fl_tambah;
+public class ProductActivity extends AppCompatActivity {
+
+    ListView list_product;
     ImageView back_btn;
-    BarangAdapter adapter;
-    public static ArrayList<Barang> barangArrayList = new ArrayList<>();
-    Barang barang;
-    String url = "https://vacillating-feedbac.000webhostapp.com/barang/readbarang.php";
+    FloatingActionButton fb_product;
+    ProductAdapter productAdapter;
+    public static ArrayList<Product> productArrayList = new ArrayList<>();
+    Product product;
+    String url = "https://vacillating-feedbac.000webhostapp.com/readProduct.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_barang);
+        setContentView(R.layout.activity_product);
+        back_btn = findViewById(R.id.back_btn);
+        fb_product = findViewById(R.id.fb_product);
+        list_product = findViewById(R.id.list_product);
+        productAdapter = new ProductAdapter(this, productArrayList);
+        list_product.setAdapter(productAdapter);
 
-        fl_tambah = findViewById(R.id.flButton);
-        list_barangg = findViewById(R.id.list_b);
-        adapter = new BarangAdapter(this, barangArrayList);
-        list_barangg.setAdapter(adapter);
-
-
-        list_barangg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list_product.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int ia, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"Edit Data","Delete Data"};
-                builder.setTitle(barangArrayList.get(ia).getNamaBarang());
+                CharSequence[] dialogItem = {"View Data", "Delete Data"};
+                builder.setTitle(productArrayList.get(position).getNamaProduct());
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int i) {
-
+                    public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
                             case 0:
-                                startActivity(new Intent(getApplicationContext(),EditBarangActivity.class).putExtra("position",ia));
+                                startActivity(new Intent(getApplicationContext(),ProductActivity.class).putExtra("position",position));
                                 break;
                             case 1:
 
@@ -73,75 +71,72 @@ public class BarangActivity extends AppCompatActivity {
                                 break;
 
                         }
-
                     }
-
                 });
                 builder.create().show();
-
-
             }
-
         });
-
-
-        fl_tambah.setOnClickListener(new View.OnClickListener() {
+        retrieveData();
+        back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goEdit = new Intent(BarangActivity.this, AddBarangActivity.class);
-                startActivity(goEdit);
+                Intent goBack = new Intent(ProductActivity.this, MenuAdminActivity.class);
+                startActivity(goBack);
+                finish();
             }
         });
+        fb_product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goEdit = new Intent(ProductActivity.this, EditBarangActivity.class);
+                startActivity(goEdit);
 
-
-
+            }
+        });
     }
 
     private void retrieveData() {
-        StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/readbarang.php",
+        StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        barangArrayList.clear();
+                        productArrayList.clear();
                         try {
-
                             JSONObject jsonObject = new JSONObject(response);
                             String sucess = jsonObject.getString("success");
-                            JSONArray jsonArray = jsonObject.getJSONArray("barang");
+                            JSONArray jsonArray = jsonObject.getJSONArray("product");
 
                             if (sucess.equals("1")) {
-
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-                                    String idBarang = object.getString("idBarang");
-                                    String namaBarang = object.getString("namaBarang");
+                                    String idProduct = object.getString("idProduct");
+                                    String namaProduct = object.getString("namaProduct");
                                     String harga = object.getString("harga");
                                     String stock = object.getString("stock");
                                     String deskripsi = object.getString("deskripsi");
                                     String kategori = object.getString("kategori");
-                                    String gambarBarang = object.getString("gambarBarang");
+                                    String gambar = object.getString("gambarProduct");
 
-                                    barang = new Barang(idBarang, namaBarang, harga,stock,deskripsi,kategori,gambarBarang);
-                                    barangArrayList.add(barang);
-                                    adapter.notifyDataSetChanged();
+                                    product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, gambar);
+                                    productArrayList.add(product);
+                                    productAdapter.notifyDataSetChanged();
                                 }
-
                             }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
-
-
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(BarangActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+
     }
 
 }

@@ -6,146 +6,175 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EditBarangActivity">
-    <LinearLayout
-        android:id="@+id/linearLayout"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/color_primary"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Insert List Barang"
-            android:layout_gravity="center_vertical|center"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/color_primary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
 
-            >
-            <TextView
-                android:text="Nama Produk "
-                style="@style/text"/>
-            <EditText
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
-            >
-            <TextView
-                android:text="Kategori "
-                style="@style/text"/>
-            <EditText
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Insert List Barang"
+                    android:layout_gravity="center_vertical|center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
 
-                >
-                <TextView
-                    android:text="Harga "
-                    style="@style/text"/>
-                <EditText
-                    android:layout_width="170dp"
-                    android:inputType="text"
-                    android:background="@drawable/bg_et"
-                    style="@style/et_main"
-                    />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                    <TextView
+
+                        android:text="Nama Produk "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_namaP"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Kategori "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_kategoriP"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+
+                        >
+                        <TextView
+                            android:text="Harga "
+                            style="@style/text"/>
+                        <EditText
+                            android:id="@+id/et_hargaP"
+                            android:layout_width="170dp"
+                            android:inputType="text"
+                            android:background="@drawable/bg_et"
+                            style="@style/et_main"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp"
+                        >
+                        <TextView
+                            android:text="Stock "
+                            style="@style/text"/>
+                        <EditText
+                            android:id="@+id/et_stockP"
+                            android:layout_width="60dp"
+                            android:inputType="text"
+                            android:background="@drawable/bg_et"
+                            style="@style/et_main"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Deskripsi "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_deskripsi"
+                        android:layout_height="120dp"
+                        android:inputType="textMultiLine"
+
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Foto Barang "
+                        style="@style/text"/>
+                    <ImageView
+                        android:id="@+id/img_barang"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        tools:src="@drawable/dummy_photo2"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_select"
+                    android:text="Select"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_btn_main"
+                    style="@style/btn_main"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_btn_main"
+                    style="@style/btn_main"/>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="16dp"
-                >
-                <TextView
-                    android:text="Stock "
-                    style="@style/text"/>
-                <EditText
-                    android:layout_width="60dp"
-                    android:inputType="text"
-                    android:background="@drawable/bg_et"
-                    style="@style/et_main"
-                    />
-            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
-            >
-            <TextView
-                android:text="Deskripsi "
-                style="@style/text"/>
-            <EditText
-                android:layout_height="120dp"
-                android:inputType="textMultiLine"
-
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp"
-            >
-            <TextView
-                android:text="Foto Barang "
-                style="@style/text"/>
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="150dp"
-                tools:src="@drawable/dummy_photo2"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:text="Save"
-            android:textAllCaps="false"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_btn_main"
-            style="@style/btn_main"/>
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

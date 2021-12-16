@@ -44,7 +44,7 @@ public class StaffActivity extends AppCompatActivity {
     StaffAdapter adapter;
     public  static ArrayList<Staff> staffArrayList = new ArrayList<>();
     Staff staff;
-    String url = "https://vacillating-feedbac.000webhostapp.com/read.php";
+    String url = "https://vacillating-feedbac.000webhostapp.com/staff/read.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +158,7 @@ public class StaffActivity extends AppCompatActivity {
     }
 
     private void deleteData(String id){
-    StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/delete.php",
+    StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/delete.php",
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

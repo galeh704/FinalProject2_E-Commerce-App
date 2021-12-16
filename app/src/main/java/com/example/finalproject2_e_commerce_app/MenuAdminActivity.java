@@ -33,7 +33,7 @@ public class MenuAdminActivity extends AppCompatActivity {
         menu_barang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gotoBarang = new Intent(MenuAdminActivity.this, BarangActivity.class);
+                Intent gotoBarang = new Intent(MenuAdminActivity.this, ProductActivity.class);
                 startActivity(gotoBarang);
             }
         });

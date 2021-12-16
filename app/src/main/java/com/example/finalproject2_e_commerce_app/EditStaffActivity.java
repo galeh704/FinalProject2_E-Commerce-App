@@ -61,13 +61,14 @@ public class EditStaffActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-       int  position = intent.getExtras().getInt("position");
-       et_id.setText(StaffActivity.staffArrayList.get(position).getIdStaff());
-        et_nama.setText(StaffActivity.staffArrayList.get(position).getNamaStaff());
-        et_jabatan.setText(StaffActivity.staffArrayList.get(position).getJabatan());
-        et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
-        et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
-        et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
+
+       //int  position = intent.getExtras().getInt("position");
+       //et_id.setText(StaffActivity.staffArrayList.get(position).getIdStaff());
+       // et_nama.setText(StaffActivity.staffArrayList.get(position).getNamaStaff());
+        //et_jabatan.setText(StaffActivity.staffArrayList.get(position).getJabatan());
+       // et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
+       // et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
+       // et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,7 +175,7 @@ public class EditStaffActivity extends AppCompatActivity {
             Toast.makeText(this,"Masukkan kontak", Toast.LENGTH_SHORT).show();
         }
         else{
-            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/insert.php",
+            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/insert.php",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -219,7 +220,7 @@ public class EditStaffActivity extends AppCompatActivity {
         String kontak = et_kontak.getText().toString().trim();
         img_staff.setImageBitmap(bitmap);
 
-        StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/update.php",
+        StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/update.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
