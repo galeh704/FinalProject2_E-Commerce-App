@@ -6,14 +6,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class adminlogin extends AppCompatActivity {
 
     private EditText admin_username,admin_password;
     private Button bt_adminlogin;
+    private String username,password;
+    private String url = "https://vacillating-feedbac.000webhostapp.com/user/adminlogin.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +42,7 @@ public class adminlogin extends AppCompatActivity {
         bt_adminlogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //Nanti masukin disini login cek staff terus masuk ke menu tambah barang dan edit barang
+                adminloginfunc();
             }
         });
 
@@ -47,7 +62,6 @@ public class adminlogin extends AppCompatActivity {
             String adminpasswordstr = admin_password.getText().toString().trim();
 
             bt_adminlogin.setEnabled(!adminusernamestr.isEmpty() && !adminpasswordstr.isEmpty());
-
         }
 
         @Override
@@ -55,4 +69,39 @@ public class adminlogin extends AppCompatActivity {
 
         }
     };
+
+    public void adminloginfunc(){
+        username = admin_username.getText().toString().trim();
+        password = admin_password.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("res", response);
+                if (response.equals("success")) {
+                    Intent intent = new Intent(getApplicationContext(), successfullogin.class); //ganti ke activity home nanti disini
+                    startActivity(intent);
+                    finish();
+                } else if (response.equals("failure")) {
+                    Toast.makeText(getApplicationContext(), "Invalid Login Id/Password", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> data = new HashMap<>();
+                data.put("email", username);
+                data.put("password", password);
+                return data;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+
+    }
 }
