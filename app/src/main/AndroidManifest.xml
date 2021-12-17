@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.finalproject2_e_commerce_app">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Gharick E-Commerce"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject2_ECommerceApp">
         <activity
-            android:name=".EditBarangActivity"
-            android:exported="false" />
+            android:name=".aboutus"
+            android:exported="true"
+            android:label="About Us"/>
         <activity
-            android:name=".BarangActivity"
-            android:exported="false" />
+            android:name=".adminlogin"
+            android:exported="true"
+            android:label="Admin"/>
         <activity
-            android:name=".EditStaffActivity"
-            android:exported="false" />
+            android:name=".successfullogin"
+            android:exported="true"
+            android:label="Sucessful Login" />
         <activity
-            android:name=".StaffActivity"
-            android:exported="true">
-
-        </activity>
+            android:name=".stafflogin"
+            android:exported="true"
+            android:label="Staff" />
         <activity
-            android:name=".MenuAdminActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:name=".signup"
+            android:exported="true"
+            android:label="Sign Up" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-    </application>
+            android:exported="true"
+            android:label="Log In">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
