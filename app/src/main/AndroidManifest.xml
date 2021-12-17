@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject2_ECommerceApp">
         <activity
+            android:name=".EditBarangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BarangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".MenuAdminActivity"
+            android:exported="true"/>
+        <activity
             android:name=".aboutus"
             android:exported="true"
             android:label="About Us"/>

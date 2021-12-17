@@ -79,7 +79,7 @@ public class adminlogin extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.d("res", response);
                 if (response.equals("success")) {
-                    Intent intent = new Intent(getApplicationContext(), successfullogin.class); //ganti ke activity home nanti disini
+                    Intent intent = new Intent(getApplicationContext(), MenuAdminActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (response.equals("failure")) {
