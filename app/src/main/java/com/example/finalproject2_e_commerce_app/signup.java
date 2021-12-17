@@ -11,10 +11,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class signup extends AppCompatActivity {
 
     private EditText signup_username,signup_fullname,signup_number,signup_password;
     private Button bt_signup;
+    private String username,fullname,number,password;
+    private String url = "https://vacillating-feedbac.000webhostapp.com/user/register.php";
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +39,12 @@ public class signup extends AppCompatActivity {
         signup_number = findViewById(R.id.editText_signup_mobilenumber);
         signup_password = findViewById(R.id.editText_signup_password);
 
+
         bt_signup = findViewById(R.id.button_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //Sign up data ke database nanti disini
-
-                Intent signup = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(signup);
+                signup();
             }
         });
 
@@ -67,4 +77,40 @@ public class signup extends AppCompatActivity {
 
         }
     };
+
+    public void signup() {
+        username = signup_username.getText().toString().trim();
+        fullname = signup_fullname.getText().toString().trim();
+        password = signup_password.getText().toString().trim();
+        number = signup_number.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (response.equals("success")) {
+                    Toast.makeText(getApplicationContext(), "Successfully registered.", Toast.LENGTH_SHORT).show();
+                    Intent signup = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(signup);
+                } else if (response.equals("failure")) {
+                    Toast.makeText(getApplicationContext(), "Something Went Wrong.", Toast.LENGTH_SHORT).show();                  }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> data = new HashMap<>();
+                data.put("username", username);
+                data.put("fullname", fullname);
+                data.put("number", number);
+                data.put("password", password);
+                return data;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+    }
 }
