@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Insert List Staff"
+            android:text="Edit List Staff"
             android:layout_gravity="center_vertical|center"
             android:gravity="center"
             android:textColor="@color/white"
@@ -173,13 +173,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_btn_main"
             style="@style/btn_main"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_save"
-            android:text="Save"
-            android:textAllCaps="false"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_btn_main"
-            style="@style/btn_main"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_edit"
             android:text="Edit"

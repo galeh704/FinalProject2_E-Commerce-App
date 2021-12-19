@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditStaffActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/color_primary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Insert List Staff"
+                    android:layout_gravity="center_vertical|center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+            <!--<TextView
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textSize="16sp"
+                style="@style/text"
+
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+
+                android:textSize="16sp"
+                style="@style/text"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            -->
+
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                >
+                <EditText
+                    android:id="@+id/et_idS"
+                    android:background="@drawable/bg_et"
+                    style="@style/et_main"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_staff"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    tools:src="@drawable/dummy_photo"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="24dp"
+                    >
+                    <TextView
+                        android:text="Nama "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_namaS"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Status "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_jabatanS"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Email "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_emailS"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Password "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_passwordS"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:text="Kontak "
+                        style="@style/text"/>
+                    <EditText
+                        android:id="@+id/et_kontakS"
+                        android:background="@drawable/bg_et"
+                        style="@style/et_main"
+                        />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_select"
+                    android:text="Select"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_btn_main"
+                    style="@style/btn_main"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_btn_main"
+                    style="@style/btn_main"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_edit"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_btn_main"
+                    style="@style/btn_main"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

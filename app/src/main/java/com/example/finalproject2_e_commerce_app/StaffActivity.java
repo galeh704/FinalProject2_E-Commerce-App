@@ -100,7 +100,7 @@ public class StaffActivity extends AppCompatActivity {
         fb_staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goEdit = new Intent(StaffActivity.this, EditStaffActivity.class);
+                Intent goEdit = new Intent(StaffActivity.this, AddStaffActivity.class);
                 startActivity(goEdit);
 
             }

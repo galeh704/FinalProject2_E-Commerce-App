@@ -62,21 +62,15 @@ public class EditStaffActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-       //int  position = intent.getExtras().getInt("position");
-       //et_id.setText(StaffActivity.staffArrayList.get(position).getIdStaff());
-       // et_nama.setText(StaffActivity.staffArrayList.get(position).getNamaStaff());
-        //et_jabatan.setText(StaffActivity.staffArrayList.get(position).getJabatan());
-       // et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
-       // et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
-       // et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
+       int  position = intent.getExtras().getInt("position");
+       et_id.setText(StaffActivity.staffArrayList.get(position).getIdStaff());
+       et_nama.setText(StaffActivity.staffArrayList.get(position).getNamaStaff());
+        et_jabatan.setText(StaffActivity.staffArrayList.get(position).getJabatan());
+       et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
+       et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
+       et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
 
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                insertData();
-                startActivity(new Intent(EditStaffActivity.this, StaffActivity.class));
-            }
-        });
+
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,66 +142,7 @@ public class EditStaffActivity extends AppCompatActivity {
     }
 
 
-    private void insertData(){
-        String namaStaff = et_nama.getText().toString().trim();
-        String jabatan = et_jabatan.getText().toString().trim();
-        String email = et_email.getText().toString().trim();
-        String password = et_password.getText().toString().trim();
-        String kontak = et_kontak.getText().toString().trim();
-        img_staff.setImageBitmap(bitmap);
 
-        if(namaStaff.isEmpty()){
-            Toast.makeText(this,"Masukkan nama", Toast.LENGTH_SHORT).show();
-        }
-        else if(jabatan.isEmpty()){
-            Toast.makeText(this,"Masukkan nim", Toast.LENGTH_SHORT).show();
-        }
-        else if(email.isEmpty()){
-            Toast.makeText(this,"Masukkan jurusan", Toast.LENGTH_SHORT).show();
-        }
-        else if(password.isEmpty()){
-            Toast.makeText(this,"Masukkan alamat", Toast.LENGTH_SHORT).show();
-        }
-        else if(kontak.isEmpty()){
-            Toast.makeText(this,"Masukkan kontak", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/insert.php",
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            if(response.equalsIgnoreCase("data masuk")){
-                                Toast.makeText(EditStaffActivity.this, "data masuk", Toast.LENGTH_SHORT).show();
-                            } else{
-                                Toast.makeText(EditStaffActivity.this, response, Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(EditStaffActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }){
-                @Nullable
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("namaStaff", namaStaff);
-                    params.put("jabatan", jabatan);
-                    params.put("email", email);
-                    params.put("password", password);
-                    params.put("kontak", kontak);
-                    params.put("gambar", encodedImage);
-
-
-                    return params;
-                }
-            };
-            RequestQueue requestQueue = Volley.newRequestQueue(EditStaffActivity.this);
-            requestQueue.add(request);
-        }
-    }
     private void updateData(){
         String idStaff = et_id.getText().toString().trim();
         String namaStaff = et_nama.getText().toString().trim();

@@ -11,9 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,55 +36,39 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddBarangActivity extends AppCompatActivity {
-    EditText et_nama,et_kategori,et_harga,et_stock,et_deskripsi;
-    Button btn_save,btn_select;
-    ImageView img_barang;
+public class AddStaffActivity extends AppCompatActivity {
+    EditText et_nama, et_email, et_kontak,et_password,et_jabatan,et_id;
+    Button btn_save,btn_select,btn_edit;
+    ImageView img_staff;
     Bitmap bitmap;
     String encodedImage;
-    String[] items = {"Ricky", "Reni", "Rini", "Rani", "Seres", "Hana"};
-    AutoCompleteTextView autoCompleteTextView;
-
-    ArrayAdapter<String> adapteritems;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_barang);
-        et_nama = findViewById(R.id.et_namaP);
-        et_deskripsi = findViewById(R.id.et_deskripsi);
-        et_harga = findViewById(R.id.et_hargaP);
-        et_stock = findViewById(R.id.et_stockP);
-        et_kategori = findViewById(R.id.et_kategoriP);
+        setContentView(R.layout.activity_add_staff);
+        et_id= findViewById(R.id.et_idS);
+        et_nama = findViewById(R.id.et_namaS);
+        et_email = findViewById(R.id.et_emailS);
+        et_jabatan = findViewById(R.id.et_jabatanS);
+        et_kontak = findViewById(R.id.et_kontakS);
+        et_password = findViewById(R.id.et_passwordS);
         btn_save = findViewById(R.id.btn_save);
         btn_select = findViewById(R.id.btn_select);
-        img_barang = findViewById(R.id.img_barang);
-        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
-        adapteritems = new ArrayAdapter<String>(this, R.layout.list_kategori, items);
-        autoCompleteTextView.setAdapter(adapteritems);
-
-
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        img_staff = findViewById(R.id.img_staff);
+        btn_edit = findViewById(R.id.btn_edit);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insertData();
-                startActivity(new Intent(AddBarangActivity.this, BarangActivity.class));
+                startActivity(new Intent(AddStaffActivity.this, StaffActivity.class));
             }
         });
+
         btn_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dexter.withActivity(AddBarangActivity.this)
+                Dexter.withActivity(AddStaffActivity.this)
                         .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                         .withListener(new PermissionListener() {
                             @Override
@@ -120,7 +101,7 @@ public class AddBarangActivity extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(filePath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
-                img_barang.setImageBitmap(bitmap);
+                img_staff.setImageBitmap(bitmap);
 
                 imageStore(bitmap);
 
@@ -145,59 +126,67 @@ public class AddBarangActivity extends AppCompatActivity {
 
 
     }
+
+
+
     private void insertData(){
-        String namaP = et_nama.getText().toString().trim();
-        String kategori = et_kategori.getText().toString().trim();
-        String harga = et_harga.getText().toString().trim();
-        String stock = et_stock.getText().toString().trim();
-        String deskripsi = et_deskripsi.getText().toString().trim();
+        String namaStaff = et_nama.getText().toString().trim();
+        String jabatan = et_jabatan.getText().toString().trim();
+        String email = et_email.getText().toString().trim();
+        String password = et_password.getText().toString().trim();
+        String kontak = et_kontak.getText().toString().trim();
+        img_staff.setImageBitmap(bitmap);
 
-
-        img_barang.setImageBitmap(bitmap);
-
-
-
-            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/insertProduct.php",
+        if(namaStaff.isEmpty()){
+            Toast.makeText(this,"Masukkan nama", Toast.LENGTH_SHORT).show();
+        }
+        else if(jabatan.isEmpty()){
+            Toast.makeText(this,"Masukkan nim", Toast.LENGTH_SHORT).show();
+        }
+        else if(email.isEmpty()){
+            Toast.makeText(this,"Masukkan jurusan", Toast.LENGTH_SHORT).show();
+        }
+        else if(password.isEmpty()){
+            Toast.makeText(this,"Masukkan alamat", Toast.LENGTH_SHORT).show();
+        }
+        else if(kontak.isEmpty()){
+            Toast.makeText(this,"Masukkan kontak", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/insert.php",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             if(response.equalsIgnoreCase("data masuk")){
-                                Toast.makeText(AddBarangActivity.this, "data masuk", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddStaffActivity.this, "data masuk", Toast.LENGTH_SHORT).show();
                             } else{
-                                Toast.makeText(AddBarangActivity.this, response, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddStaffActivity.this, response, Toast.LENGTH_SHORT).show();
                             }
 
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(AddBarangActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddStaffActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }){
                 @Nullable
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
+                    params.put("namaStaff", namaStaff);
+                    params.put("jabatan", jabatan);
+                    params.put("email", email);
+                    params.put("password", password);
+                    params.put("kontak", kontak);
+                    params.put("gambar", encodedImage);
 
-
-                    autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            String item = adapterView.getItemAtPosition(i).toString().trim();
-                            params.put("namaProduct", namaP);
-                            params.put("harga", harga);
-                            params.put("stock", stock);
-                            params.put("deskripsi", deskripsi);
-                            params.put("kategori", item);
-                            params.put("gambarProduct", encodedImage);
-
-                        }
-                    });
 
                     return params;
                 }
             };
-            RequestQueue requestQueue = Volley.newRequestQueue(AddBarangActivity.this);
+            RequestQueue requestQueue = Volley.newRequestQueue(AddStaffActivity.this);
             requestQueue.add(request);
         }
     }
+}

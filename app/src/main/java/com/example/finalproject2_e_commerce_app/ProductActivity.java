@@ -91,7 +91,7 @@ public class ProductActivity extends AppCompatActivity {
         fb_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goEdit = new Intent(ProductActivity.this, EditProductActivity.class);
+                Intent goEdit = new Intent(ProductActivity.this, AddBarangActivity.class);
                 startActivity(goEdit);
 
             }

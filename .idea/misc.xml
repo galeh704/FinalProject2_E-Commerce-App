@@ -11,7 +11,8 @@
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2491638795986622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/drawable/rounded_image.xml" value="0.24864864864864866" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/drawable/rounded_list.xml" value="0.24864864864864866" />
-        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_add_barang.xml" value="0.17871621621621622" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_add_barang.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_add_staff.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_barang.xml" value="0.16" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_edit_barang.xml" value="0.16" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_edit_product.xml" value="0.2141891891891892" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_staff.xml" value="0.18" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_barang.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_barang1.xml" value="0.11790540540540541" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_kategori.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_product.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_staff.xml" value="0.22" />
         <entry key="..\:/Users/Galeh Putra Ramanda/AndroidStudioProjects/FinalProject2_ECommerceApp/app/src/main/res/layout/activity_main.xml" value="0.11730072463768115" />
