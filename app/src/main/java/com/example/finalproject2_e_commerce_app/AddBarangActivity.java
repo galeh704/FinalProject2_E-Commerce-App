@@ -80,7 +80,7 @@ public class AddBarangActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 insertData();
-                startActivity(new Intent(AddBarangActivity.this, BarangActivity.class));
+                startActivity(new Intent(AddBarangActivity.this, ProductActivity.class));
             }
         });
         btn_select.setOnClickListener(new View.OnClickListener() {
