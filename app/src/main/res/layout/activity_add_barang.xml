@@ -5,7 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EditBarangActivity">
+    tools:context=".AddBarangActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -47,9 +59,11 @@
 
             >
             <TextView
+
                 android:text="Nama Produk "
                 style="@style/text"/>
             <EditText
+                android:id="@+id/et_namaP"
                 android:background="@drawable/bg_et"
                 style="@style/et_main"
                 />
@@ -64,9 +78,11 @@
                 android:text="Kategori "
                 style="@style/text"/>
             <EditText
-                android:background="@drawable/bg_et"
-                style="@style/et_main"
-                />
+            android:id="@+id/et_kategoriP"
+            android:background="@drawable/bg_et"
+            style="@style/et_main"
+            />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -84,6 +100,7 @@
                     android:text="Harga "
                     style="@style/text"/>
                 <EditText
+                    android:id="@+id/et_hargaP"
                     android:layout_width="170dp"
                     android:inputType="text"
                     android:background="@drawable/bg_et"
@@ -100,6 +117,7 @@
                     android:text="Stock "
                     style="@style/text"/>
                 <EditText
+                    android:id="@+id/et_stockP"
                     android:layout_width="60dp"
                     android:inputType="text"
                     android:background="@drawable/bg_et"
@@ -118,6 +136,7 @@
                 android:text="Deskripsi "
                 style="@style/text"/>
             <EditText
+                android:id="@+id/et_deskripsi"
                 android:layout_height="120dp"
                 android:inputType="textMultiLine"
 
@@ -135,6 +154,7 @@
                 android:text="Foto Barang "
                 style="@style/text"/>
             <ImageView
+                android:id="@+id/img_barang"
                 android:layout_width="250dp"
                 android:layout_height="150dp"
                 tools:src="@drawable/dummy_photo2"
@@ -142,10 +162,20 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_select"
+            android:text="Select"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_btn_main"
+            style="@style/btn_main"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
             android:text="Save"
             android:textAllCaps="false"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_btn_main"
             style="@style/btn_main"/>
     </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -38,52 +37,49 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditStaffActivity extends AppCompatActivity {
-    EditText et_nama, et_email, et_kontak,et_password,et_jabatan,et_id;
-    Button btn_save,btn_select,btn_edit;
-    ImageView img_staff;
+public class EditProductActivity extends AppCompatActivity {
+    EditText et_idP,et_nama,et_kategori,et_harga,et_stock,et_deskripsi;
+    Button btn_save,btn_select;
+    ImageView img_barang;
     Bitmap bitmap;
     String encodedImage;
+    String url = "https://vacillating-feedbac.000webhostapp.com/updateProduct.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_staff);
-        et_id= findViewById(R.id.et_idS);
-        et_nama = findViewById(R.id.et_namaS);
-        et_email = findViewById(R.id.et_emailS);
-        et_jabatan = findViewById(R.id.et_jabatanS);
-        et_kontak = findViewById(R.id.et_kontakS);
-        et_password = findViewById(R.id.et_passwordS);
+        setContentView(R.layout.activity_edit_product);
+        et_idP = findViewById(R.id.et_idP);
+        et_nama = findViewById(R.id.et_namaP);
+        et_deskripsi = findViewById(R.id.et_deskripsi);
+        et_harga = findViewById(R.id.et_hargaP);
+        et_stock = findViewById(R.id.et_stockP);
+        et_kategori = findViewById(R.id.et_kategoriP);
         btn_save = findViewById(R.id.btn_save);
         btn_select = findViewById(R.id.btn_select);
-        img_staff = findViewById(R.id.img_staff);
-        btn_edit = findViewById(R.id.btn_edit);
-
+        img_barang = findViewById(R.id.img_barang);
 
         Intent intent = getIntent();
 
-       int  position = intent.getExtras().getInt("position");
-       et_id.setText(StaffActivity.staffArrayList.get(position).getIdStaff());
-       et_nama.setText(StaffActivity.staffArrayList.get(position).getNamaStaff());
-        et_jabatan.setText(StaffActivity.staffArrayList.get(position).getJabatan());
-       et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
-       et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
-       et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
-        Glide.with(getApplicationContext()).load(StaffActivity.staffArrayList.get(position).getGambar()).into(img_staff);
-
-
-        btn_edit.setOnClickListener(new View.OnClickListener() {
+        int  position = intent.getExtras().getInt("position");
+        et_idP.setText(ProductActivity.productArrayList.get(position).getIdProduct());
+        et_nama.setText(ProductActivity.productArrayList.get(position).getNamaProduct());
+        et_deskripsi.setText(ProductActivity.productArrayList.get(position).getDeskripsi());
+        et_stock.setText(ProductActivity.productArrayList.get(position).getStock());
+        et_harga.setText(ProductActivity.productArrayList.get(position).getHarga());
+        et_kategori.setText(ProductActivity.productArrayList.get(position).getKategori());
+       Glide.with(getApplicationContext()).load(ProductActivity.productArrayList.get(position).getGambarProduct()).into(img_barang);
+        btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateData();
-                startActivity(new Intent(EditStaffActivity.this, StaffActivity.class));
+                startActivity(new Intent(EditProductActivity.this, ProductActivity.class));
             }
         });
         btn_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dexter.withActivity(EditStaffActivity.this)
+                Dexter.withActivity(EditProductActivity.this)
                         .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                         .withListener(new PermissionListener() {
                             @Override
@@ -106,8 +102,6 @@ public class EditStaffActivity extends AppCompatActivity {
                         }).check();
             }
         });
-
-
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -117,7 +111,7 @@ public class EditStaffActivity extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(filePath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
-                img_staff.setImageBitmap(bitmap);
+                img_barang.setImageBitmap(bitmap);
 
                 imageStore(bitmap);
 
@@ -140,54 +134,46 @@ public class EditStaffActivity extends AppCompatActivity {
 
         encodedImage = android.util.Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
-
     }
-
-
-
     private void updateData(){
-        String idStaff = et_id.getText().toString().trim();
-        String namaStaff = et_nama.getText().toString().trim();
-        String jabatan = et_jabatan.getText().toString().trim();
-        String email = et_email.getText().toString().trim();
-        String password = et_password.getText().toString().trim();
-        String kontak = et_kontak.getText().toString().trim();
-        img_staff.setImageBitmap(bitmap);
+    String idProduct = et_idP.getText().toString().trim();
+    String namaProduct = et_nama.getText().toString().trim();
+    String deskripsi = et_deskripsi.getText().toString().trim();
+    String harga = et_harga.getText().toString().trim();
+    String stock = et_stock.getText().toString().trim();
+    String kategori = et_kategori.getText().toString().trim();
+    img_barang.setImageBitmap(bitmap);
 
-        StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/update.php",
+        StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(EditStaffActivity.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),StaffActivity.class));
-                        finish();
-
+                        Toast.makeText(EditProductActivity.this, response, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), ProductActivity.class));
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(EditStaffActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProductActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("idStaff", idStaff);
-                params.put("namaStaff", namaStaff);
-                params.put("jabatan", jabatan);
-                params.put("email", email);
-                params.put("password", password);
-                params.put("kontak", kontak);
-                params.put("gambar", encodedImage);
-
-
+                params.put("idProduct", idProduct);
+                params.put("namaProduct", namaProduct);
+                params.put("harga", harga);
+                params.put("stock", stock);
+                params.put("deskripsi", deskripsi);
+                params.put("kategori", kategori);
+                params.put("gambarProduct", encodedImage);
                 return params;
             }
         };
-        RequestQueue requestQueue = Volley.newRequestQueue(EditStaffActivity.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(EditProductActivity.this);
         requestQueue.add(request);
     }
 
-    }
 
+}

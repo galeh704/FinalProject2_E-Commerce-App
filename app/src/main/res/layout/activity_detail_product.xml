@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FBFF"
+    tools:context=".DetailProductActivity">
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            style="@style/logo"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="379dp"
+        android:layout_height="405dp"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_list">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:src="@drawable/dummy_photo3" />
+        <LinearLayout
+            style="@style/linearlayout_wrap"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            >
+            <LinearLayout
+                style="@style/linearlayout_wrap"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/textharga"
+                    android:text="Rp "
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_hargaDetail"
+                    style="@style/textharga"
+                    android:text="8.393"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_namaDetail"
+                style="@style/textbarang"
+                android:textSize="14sp"
+                android:text="Sepatu merah keren, nyaman"
+                android:layout_marginTop="4dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/star_icon"
+
+                    />
+                <TextView
+                    style="@style/textbarang"
+                    android:text="4.8 | 480 Ulasan"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10dp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/lokasi_icon"
+
+                    />
+                <TextView
+                    style="@style/textbarang"
+                    android:text="Jakarta Barat"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10dp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="405dp"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/linear2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_list">
+
+        <TextView
+            style="@style/textregular"
+            android:text="Deskripsi Produk"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            style="@style/textbarang"
+            android:text="Sepatu ini sangat nyaman dipakai dan juga memiliki beberapa kehebatan , antara lain :"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:text="Beli Sekarang"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_btn_buy"
+            android:layout_marginEnd="24dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

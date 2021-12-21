@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.finalproject2_e_commerce_app.R;
 import com.example.finalproject2_e_commerce_app.list.Staff;
 
@@ -33,10 +35,12 @@ public class StaffAdapter extends ArrayAdapter<Staff> {
         TextView staff_nama = view.findViewById(R.id.tv_namaS);
         TextView staff_id = view.findViewById(R.id.tv_id);
         TextView staff_jabatan = view.findViewById(R.id.tv_jabatan);
+        ImageView staff_gambar = view.findViewById(R.id.img_staf);
 
         staff_id.setText(arrayListStaff.get(position).getIdStaff());
         staff_nama.setText(arrayListStaff.get(position).getNamaStaff());
         staff_jabatan.setText(arrayListStaff.get(position).getJabatan());
+        Glide.with(context).load(arrayListStaff.get(position).getGambar()).into(staff_gambar);
 
 
 

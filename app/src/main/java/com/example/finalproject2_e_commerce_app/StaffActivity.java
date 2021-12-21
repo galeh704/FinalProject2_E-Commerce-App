@@ -44,7 +44,7 @@ public class StaffActivity extends AppCompatActivity {
     StaffAdapter adapter;
     public  static ArrayList<Staff> staffArrayList = new ArrayList<>();
     Staff staff;
-    String url = "https://vacillating-feedbac.000webhostapp.com/read.php";
+    String url = "https://vacillating-feedbac.000webhostapp.com/staff/read.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class StaffActivity extends AppCompatActivity {
         fb_staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goEdit = new Intent(StaffActivity.this, EditStaffActivity.class);
+                Intent goEdit = new Intent(StaffActivity.this, AddStaffActivity.class);
                 startActivity(goEdit);
 
             }
@@ -135,7 +135,10 @@ public class StaffActivity extends AppCompatActivity {
                                     String kontak = object.getString("kontak");
                                     String gambar = object.getString("gambar");
 
-                                    staff = new Staff(idStaff, namaStaff, jabatan, email, password, kontak,gambar);
+
+                                    String url2 = "https://vacillating-feedbac.000webhostapp.com/staff/Images/" + gambar;
+
+                                    staff = new Staff(idStaff, namaStaff, jabatan, email, password, kontak,url2);
                                     staffArrayList.add(staff);
                                     adapter.notifyDataSetChanged();
                                 }
@@ -158,7 +161,7 @@ public class StaffActivity extends AppCompatActivity {
     }
 
     private void deleteData(String id){
-    StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/delete.php",
+    StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/staff/delete.php",
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

@@ -1,0 +1,33 @@
+package com.example.finalproject2_e_commerce_app.utils;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.finalproject2_e_commerce_app.MenFragment;
+import com.example.finalproject2_e_commerce_app.WomenFragment;
+
+public class FashionAdapter extends FragmentStateAdapter {
+    public FashionAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+
+        switch (position){
+            case 1:
+                return new WomenFragment();
+
+        }
+        return new MenFragment();
+    }
+
+    @Override
+    public int getItemCount() {
+        return 2;
+    }
+}
