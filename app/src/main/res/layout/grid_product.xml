@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="178dp"
+    android:layout_height="365dp"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_list"
+    android:layout_marginTop="8dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="171dp"
+        android:src="@drawable/dummy_photo2"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp">
+        <TextView
+            android:id="@+id/tv_nama"
+            style="@style/textbarang"
+            android:text="Sepatu Merah, keren, nyaman"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            <TextView
+
+                style="@style/text"
+                android:text="Rp"
+                />
+            <TextView
+                android:id="@+id/tv_harga"
+                style="@style/text"
+                android:text="18.85.0000"
+                android:layout_marginStart="4dp"
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/free_icon"
+            android:layout_marginTop="4dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/star_icon"
+
+                />
+            <TextView
+
+                style="@style/textbarang"
+                android:text="4.8 | 480 Ulasan"
+                android:layout_marginStart="4dp"
+                android:textSize="10dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/lokasi_icon"
+                />
+            <TextView
+                style="@style/textbarang"
+                android:text="Jakarta Barat"
+                android:layout_marginStart="4dp"
+                android:textSize="10dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

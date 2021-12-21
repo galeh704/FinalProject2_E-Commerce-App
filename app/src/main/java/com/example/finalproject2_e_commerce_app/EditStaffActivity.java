@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -69,6 +70,7 @@ public class EditStaffActivity extends AppCompatActivity {
        et_email.setText(StaffActivity.staffArrayList.get(position).getEmail());
        et_password.setText(StaffActivity.staffArrayList.get(position).getPassword());
        et_kontak.setText(StaffActivity.staffArrayList.get(position).getKontak());
+        Glide.with(getApplicationContext()).load(StaffActivity.staffArrayList.get(position).getGambar()).into(img_staff);
 
 
         btn_edit.setOnClickListener(new View.OnClickListener() {

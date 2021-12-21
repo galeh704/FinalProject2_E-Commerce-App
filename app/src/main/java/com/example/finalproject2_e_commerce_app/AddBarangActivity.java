@@ -45,10 +45,10 @@ public class AddBarangActivity extends AppCompatActivity {
     ImageView img_barang;
     Bitmap bitmap;
     String encodedImage;
-    String[] items = {"Ricky", "Reni", "Rini", "Rani", "Seres", "Hana"};
+
     AutoCompleteTextView autoCompleteTextView;
 
-    ArrayAdapter<String> adapteritems;
+
 
 
     @Override
@@ -63,9 +63,8 @@ public class AddBarangActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_save);
         btn_select = findViewById(R.id.btn_select);
         img_barang = findViewById(R.id.img_barang);
-        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
-        adapteritems = new ArrayAdapter<String>(this, R.layout.list_kategori, items);
-        autoCompleteTextView.setAdapter(adapteritems);
+
+
 
 
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

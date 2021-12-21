@@ -119,6 +119,7 @@ public class BarangActivity extends AppCompatActivity {
                                     String kategori = object.getString("kategori");
                                     String gambarBarang = object.getString("gambarBarang");
 
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambarBarang;
                                     barang = new Barang(idBarang, namaBarang, harga,stock,deskripsi,kategori,gambarBarang);
                                     barangArrayList.add(barang);
                                     adapter.notifyDataSetChanged();

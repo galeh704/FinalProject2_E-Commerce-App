@@ -16,6 +16,7 @@
         />
     <!--android:foreground="@drawable/rounded_image"-->
     <ImageView
+        android:id="@+id/img_product"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/dummy_photo2"

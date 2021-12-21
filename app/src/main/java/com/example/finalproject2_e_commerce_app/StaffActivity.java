@@ -135,7 +135,10 @@ public class StaffActivity extends AppCompatActivity {
                                     String kontak = object.getString("kontak");
                                     String gambar = object.getString("gambar");
 
-                                    staff = new Staff(idStaff, namaStaff, jabatan, email, password, kontak,gambar);
+
+                                    String url2 = "https://vacillating-feedbac.000webhostapp.com/staff/Images/" + gambar;
+
+                                    staff = new Staff(idStaff, namaStaff, jabatan, email, password, kontak,url2);
                                     staffArrayList.add(staff);
                                     adapter.notifyDataSetChanged();
                                 }

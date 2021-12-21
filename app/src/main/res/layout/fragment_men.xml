@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenFragment">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:background="#E28210"
+           android:layout_marginTop="6dp">
+        <TextView
+            style="@style/text"
+            android:text="T-Shirts"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="12dp"/>
+
+           <ImageView
+               android:layout_width="125dp"
+               android:layout_height="80dp"
+               android:src="@drawable/men_icon1"
+               android:layout_gravity="right"
+               android:layout_marginEnd="35dp"
+               android:layout_marginTop="4dp"/>
+       </FrameLayout>
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:background="#821414"
+           android:layout_marginTop="6dp">
+           <TextView
+               style="@style/text"
+               android:text="Formals"
+               android:textSize="24dp"
+               android:textColor="@color/white"
+               android:layout_gravity="bottom"
+               android:layout_marginStart="40dp"
+               android:layout_marginBottom="12dp"/>
+
+           <ImageView
+               android:layout_width="125dp"
+               android:layout_height="80dp"
+               android:src="@drawable/men_icon2"
+               android:layout_gravity="right"
+               android:layout_marginEnd="35dp"
+               android:layout_marginTop="4dp"/>
+       </FrameLayout>
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:background="#858585"
+           android:layout_marginTop="6dp">
+           <TextView
+               style="@style/text"
+               android:text="Shoes"
+               android:textSize="24dp"
+               android:textColor="@color/white"
+               android:layout_gravity="bottom"
+               android:layout_marginStart="40dp"
+               android:layout_marginBottom="12dp"/>
+
+           <ImageView
+               android:layout_width="125dp"
+               android:layout_height="80dp"
+               android:src="@drawable/fashion_icon1"
+               android:layout_gravity="right"
+               android:layout_marginEnd="35dp"
+              />
+       </FrameLayout>
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:layout_marginTop="6dp"
+           android:background="#807E9C">
+
+           <TextView
+               style="@style/text"
+               android:layout_gravity="bottom"
+               android:layout_marginStart="40dp"
+               android:layout_marginBottom="12dp"
+               android:text="Pants"
+               android:textColor="@color/white"
+               android:textSize="24dp" />
+
+           <ImageView
+               android:layout_width="125dp"
+               android:layout_height="80dp"
+               android:layout_gravity="right"
+
+               android:layout_marginEnd="35dp"
+               android:src="@drawable/fashion_icon2" />
+       </FrameLayout>
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:background="#9C8E7E"
+           android:layout_marginTop="6dp">
+           <TextView
+               style="@style/text"
+               android:text="Outwear"
+               android:textSize="24dp"
+               android:textColor="@color/white"
+               android:layout_gravity="bottom"
+               android:layout_marginStart="40dp"
+               android:layout_marginBottom="12dp"/>
+
+           <ImageView
+               android:layout_width="125dp"
+               android:layout_height="80dp"
+               android:src="@drawable/fashion_icon3"
+               android:layout_gravity="right"
+               android:layout_marginEnd="35dp"
+               android:layout_marginTop="4dp"/>
+       </FrameLayout>
+
+   </LinearLayout>
+
+
+</FrameLayout>

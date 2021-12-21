@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -107,6 +108,7 @@ public class ProductActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String sucess = jsonObject.getString("success");
+                            Log.e("anyText",response);
                             JSONArray jsonArray = jsonObject.getJSONArray("product");
 
                             if (sucess.equals("1")) {
@@ -121,7 +123,9 @@ public class ProductActivity extends AppCompatActivity {
                                     String kategori = object.getString("kategori");
                                     String gambar = object.getString("gambarProduct");
 
-                                    product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, gambar);
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambar;
+
+                                    product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     productArrayList.add(product);
                                     productAdapter.notifyDataSetChanged();
                                 }

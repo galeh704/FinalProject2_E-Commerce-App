@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -67,7 +68,7 @@ public class EditProductActivity extends AppCompatActivity {
         et_stock.setText(ProductActivity.productArrayList.get(position).getStock());
         et_harga.setText(ProductActivity.productArrayList.get(position).getHarga());
         et_kategori.setText(ProductActivity.productArrayList.get(position).getKategori());
-
+       Glide.with(getApplicationContext()).load(ProductActivity.productArrayList.get(position).getGambarProduct()).into(img_barang);
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
