@@ -2,17 +2,123 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7FBFF"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView_aboutus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="about us"
+        android:textColor="#133962"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_stafflogin" />
+
+    <TextView
+        android:id="@+id/textView_adminlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="256dp"
+        android:fontFamily="@font/poppins"
+        android:text="admin login"
+        android:textColor="#133962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <TextView
+        android:id="@+id/textView_stafflogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="85dp"
+        android:fontFamily="@font/poppins"
+        android:text="staff login"
+        android:textColor="#133962"
+        app:layout_constraintEnd_toStartOf="@+id/textView_aboutus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_adminlogin"
+        app:layout_constraintTop_toTopOf="@+id/textView_adminlogin" />
+
+    <EditText
+        android:id="@+id/editText_login_password"
+        android:layout_width="340dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_login_username" />
+
+    <EditText
+        android:id="@+id/editText_login_username"
+        android:layout_width="340dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_account"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_loginlogo" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#8ABDF0"
+        android:enabled="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Log In"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_login_password" />
+
+    <TextView
+        android:id="@+id/textView_createaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/poppins"
+        android:text="Create an account"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <ImageView
+        android:id="@+id/imageView_loginlogo"
+        android:layout_width="227dp"
+        android:layout_height="172dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoblue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

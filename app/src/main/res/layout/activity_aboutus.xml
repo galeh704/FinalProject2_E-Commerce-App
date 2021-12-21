@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FBFF"
+    android:paddingTop="2dp"
+    tools:context=".aboutus">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#133962"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/tv_aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#133962"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingStart="12dp"
+                android:text="About us."
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_aboutusdetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#133962"
+                android:fontFamily="@font/poppins"
+                android:paddingStart="12dp"
+                android:text="Gharickpedia is an application specially built to help a mall for growing their business projection, meanwhile in the same time also helping mall manager to serve their customer using an online service. This application will have 3 actors such as Admin, Staff and Customer. Admin is a role that can create staffs and update ID Items. Staff is a role that can login and access staff databases. User can register and login into the app, look, view and buy products that Gharickpedia sells"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_meettheteam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingStart="12dp"
+                android:text="Meet the team."
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_galeh"
+                    android:layout_width="300dp"
+                    android:layout_height="220dp"
+                    android:layout_weight="1"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/galeh" />
+
+                <TextView
+                    android:id="@+id/tv_galehdetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="12dp"
+                    android:text="Galeh Putra Ramanda is an Undergraduate Student majoring in Information Technology at STMIK Jakarta STIK, batch 2018. Interested to be a mobile developer, ricky recently founded Study Box a startup that is engaged in online courses, puts forward a basic level of material and is packaged in stages and in detail in a supportive learning community environment.."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_hansel"
+                    android:layout_width="300dp"
+                    android:layout_height="220dp"
+                    android:layout_weight="1"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/hansel" />
+
+                <TextView
+                    android:id="@+id/tv_hanseldetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="12dp"
+                    android:text="Hansel is an Undergraduate Student majoring in Electrical Engineering at Universitas Indonesia, batch 2018. Interested on learning the latest technology, especially in the fields of AI, automation, machine learning and robotics. Highly value challenges while working and have endless motivation in learning. By defining a straight learning path, Hansel can easily execute task and learning new things. In the future, my dream is to participate in creating another inovative disruptive technology."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_ricky"
+                    android:layout_width="300dp"
+                    android:layout_height="220dp"
+                    android:layout_weight="1"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/galeh" />
+
+                <TextView
+                    android:id="@+id/tv_rickydetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:text="Ricky Berlando is an Undergraduate Student majoring in Computer Science at Universitas Sumatera Utara, batch 2018. Interested to be a mobile developer, ricky recently founded Study Box a startup that is engaged in online courses, puts forward a basic level of material and is packaged in stages and in detail in a supportive learning community environment."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
