@@ -1,17 +1,16 @@
 package com.example.finalproject2_e_commerce_app;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -21,7 +20,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.finalproject2_e_commerce_app.list.Product;
-import com.example.finalproject2_e_commerce_app.utils.StaffAdapter;
 import com.example.finalproject2_e_commerce_app.utils.UserProductAdapter;
 
 import org.json.JSONArray;
@@ -29,87 +27,36 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class UserBarangActivity extends AppCompatActivity {
-    GridView grid_barang;
-    UserProductAdapter adapter;
+
+public class SmartphoneFragment extends Fragment {
     public static ArrayList<Product> arrayGridProduct = new ArrayList<>();
+    UserProductAdapter adapter;
     Product product;
-
-    TextView tv_testing;
+    GridView gridView;
+    String lalala ="https://cisti.studybox.id/testkm/fashion/readbaranguser.php";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_barang);
-        tv_testing = findViewById(R.id.tv_testing);
-        grid_barang = findViewById(R.id.grid_barang);
-        adapter = new UserProductAdapter(this, arrayGridProduct);
-        grid_barang.setAdapter(adapter);
-        arrayGridProduct.clear();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        grid_barang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        View v = inflater.inflate(R.layout.fragment_smartphone, container, false);
+        gridView = v.findViewById(R.id.grid_barang);
+        adapter = new UserProductAdapter(requireContext(), arrayGridProduct);
+        gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                        startActivity(new Intent(getApplicationContext(),DetailProductActivity.class).putExtra("position",position));
-
-
+                startActivity(new Intent(getContext(),DetailProductActivity.class).putExtra("position",position));
             }
         });
-
-
-        Intent intent = getIntent();
-        String ms = intent.getStringExtra("men_tshirt");
-        String mf = intent.getStringExtra("men_formal");
-        String wf = intent.getStringExtra("women_formal");
-        String ws = intent.getStringExtra("women_tshirt");
-        String p = intent.getStringExtra("pants");
-        String s = intent.getStringExtra("shoes");
-        String ow = intent.getStringExtra("outwear");
-
-
-        if(ms != null){
-            tv_testing.setText(ms);
-
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readbaranguser.php");
-        }
-          if(mf != null){
-
-            tv_testing.setText(mf);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readmformal.php");
-        }
-        if(wf != null){
-
-            tv_testing.setText(wf);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readwformal.php");
-        }
-         if(ws != null){
-
-            tv_testing.setText(ws);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readwtshirts.php");
-        }
-        if(s != null){
-
-            tv_testing.setText(s);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readshoes.php");
-        }
-         if(p != null){
-
-            tv_testing.setText(p);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readpants.php");
-        }
-        if(ow != null){
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readoutwear.php");
-            tv_testing.setText(ow);
-
-        }
-
+        retrieveData();
+        return v;
     }
-
-    private void retrieveData( String lala){
-
-        StringRequest request = new StringRequest(Request.Method.POST, lala,
+    private void retrieveData(){
+        StringRequest request = new StringRequest(Request.Method.POST, lalala,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -136,7 +83,6 @@ public class UserBarangActivity extends AppCompatActivity {
                                     product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     arrayGridProduct.add(product);
                                     adapter.notifyDataSetChanged();
-
                                 }
                             }
                         } catch (JSONException e) {
@@ -146,10 +92,10 @@ public class UserBarangActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(UserBarangActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         requestQueue.add(request);
     }
 }

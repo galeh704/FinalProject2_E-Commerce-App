@@ -150,7 +150,7 @@ public class AddBarangActivity extends AppCompatActivity {
 
 
 
-            StringRequest request = new StringRequest(Request.Method.POST, "https://vacillating-feedbac.000webhostapp.com/insertProduct.php",
+            StringRequest request = new StringRequest(Request.Method.POST, "https://cisti.studybox.id/testkm/insert.php",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {

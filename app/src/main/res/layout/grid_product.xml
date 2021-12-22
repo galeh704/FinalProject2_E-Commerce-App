@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="178dp"
+    android:layout_width="168dp"
     android:layout_height="365dp"
     android:orientation="vertical"
     android:background="@drawable/rounded_list"
     android:layout_marginTop="8dp"
+
     >
     <ImageView
         android:id="@+id/img_product_grid"
-        android:layout_width="match_parent"
-        android:layout_height="171dp"
+        android:layout_width="168dp"
+        android:layout_height="161dp"
+        android:foreground="@drawable/rounded_image"
         android:src="@drawable/dummy_photo2"/>
 
     <LinearLayout
@@ -17,6 +19,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="12dp"
+        android:paddingBottom="24dp"
         android:layout_marginStart="8dp">
         <TextView
             android:id="@+id/tv_id_grid"

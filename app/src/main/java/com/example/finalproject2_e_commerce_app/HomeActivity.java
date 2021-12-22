@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String kategori = "gadget";
-                Intent goGdt = new Intent(HomeActivity.this, KategoriDetailActivity.class).putExtra("gadget",kategori);
+                Intent goGdt = new Intent(HomeActivity.this, KategoriGadgetActivity.class).putExtra("gadget",kategori);
                 startActivity(goGdt);
             }
         });

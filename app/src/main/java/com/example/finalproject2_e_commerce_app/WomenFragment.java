@@ -35,24 +35,24 @@ public class WomenFragment extends Fragment {
         women_shoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String kategori5 = "women_shoes";
-                Intent shoes = new Intent( getActivity(), UserBarangActivity.class).putExtra("women_shoes",kategori5);
+                String kategori5 = "shoes";
+                Intent shoes = new Intent( getActivity(), UserBarangActivity.class).putExtra("shoes",kategori5);
                 startActivity(shoes);
             }
         });
         women_pants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String kategori4 = "women_pants";
-                Intent pants = new Intent( getActivity(), UserBarangActivity.class).putExtra("women_pants",kategori4);
+                String kategori4 = "pants";
+                Intent pants = new Intent( getActivity(), UserBarangActivity.class).putExtra("pants",kategori4);
                 startActivity(pants);
             }
         });
         women_outwear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String kategori3 = "women_outwear";
-                Intent outwear = new Intent( getActivity(), UserBarangActivity.class).putExtra("women_outwear",kategori3);
+                String kategori3 = "outwear";
+                Intent outwear = new Intent( getActivity(), UserBarangActivity.class).putExtra("outwear",kategori3);
                 startActivity(outwear);
             }
         });
