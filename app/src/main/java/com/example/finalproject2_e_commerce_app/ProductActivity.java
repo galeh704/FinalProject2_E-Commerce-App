@@ -42,7 +42,7 @@ public class ProductActivity extends AppCompatActivity {
     ProductAdapter productAdapter;
     public static ArrayList<Product> productArrayList = new ArrayList<>();
     Product product;
-    String url = "https://vacillating-feedbac.000webhostapp.com/readProduct.php";
+    String url = "https://vacillating-feedbac.000webhostapp.com/readbaranguser.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -20,8 +20,10 @@
         <entry key="..\:/Hacktiv8/Code/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_stafflogin.xml" value="0.1" />
         <entry key="..\:/Hacktiv8/Code/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_successfullogin.xml" value="0.18" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/drawable/bg_btn_buy.xml" value="0.20439189189189189" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_aboutus.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_add_barang.xml" value="0.19297658862876255" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_add_staff.xml" value="0.24121621621621622" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_adminlogin.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_detail_product.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_edit_product.xml" value="0.19493243243243244" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_edit_staff.xml" value="0.24121621621621622" />
@@ -33,12 +35,14 @@
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_splash_screen.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_staff.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_succes_buy.xml" value="0.1939189189189189" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_successfullogin.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/activity_user_barang.xml" value="0.20941262313024445" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/fragment_men.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/fragment_women.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/grid_product.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_barang.xml" value="0.1939189189189189" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_barang1.xml" value="0.1939189189189189" />
+        <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_kategori.xml" value="0.2222972972972973" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_product.xml" value="0.24121621621621622" />
         <entry key="..\:/Users/ASUS/FinalProject2_E-Commerce-App/app/src/main/res/layout/list_staff.xml" value="0.24121621621621622" />
       </map>

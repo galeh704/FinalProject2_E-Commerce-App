@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(String response) {
                 Log.d("res", response);
                 if (response.equals("success")) {
-                    Intent intent = new Intent(MainActivity.this, successfullogin.class); //ganti ke activity home nanti disini
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class); //ganti ke activity home nanti disini
                     startActivity(intent);
                     finish();
                 } else if (response.equals("failure")) {
