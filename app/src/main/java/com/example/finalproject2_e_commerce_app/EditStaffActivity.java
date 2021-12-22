@@ -78,6 +78,7 @@ public class EditStaffActivity extends AppCompatActivity {
             public void onClick(View view) {
                 updateData();
                 startActivity(new Intent(EditStaffActivity.this, StaffActivity.class));
+                finish();
             }
         });
         btn_select.setOnClickListener(new View.OnClickListener() {
