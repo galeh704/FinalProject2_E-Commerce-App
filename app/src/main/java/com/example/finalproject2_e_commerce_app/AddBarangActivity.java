@@ -67,13 +67,7 @@ public class AddBarangActivity extends AppCompatActivity {
 
 
 
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
 
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -177,21 +171,14 @@ public class AddBarangActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
+                    params.put("namaProduct", namaP);
+                    params.put("harga", harga);
+                    params.put("stock", stock);
+                    params.put("deskripsi", deskripsi);
+                    params.put("kategori", kategori);
+                    params.put("gambarProduct", encodedImage);
 
 
-                    autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            String item = adapterView.getItemAtPosition(i).toString().trim();
-                            params.put("namaProduct", namaP);
-                            params.put("harga", harga);
-                            params.put("stock", stock);
-                            params.put("deskripsi", deskripsi);
-                            params.put("kategori", item);
-                            params.put("gambarProduct", encodedImage);
-
-                        }
-                    });
 
                     return params;
                 }
