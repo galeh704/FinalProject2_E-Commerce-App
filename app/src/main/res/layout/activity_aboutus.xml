@@ -124,7 +124,7 @@
                     android:layout_weight="1"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    app:srcCompat="@drawable/galeh" />
+                    app:srcCompat="@drawable/ricky" />
 
                 <TextView
                     android:id="@+id/tv_rickydetails"
