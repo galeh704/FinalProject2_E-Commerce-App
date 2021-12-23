@@ -159,6 +159,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_beli"
             android:layout_width="150dp"
             android:layout_height="38dp"
             android:text="Beli Sekarang"

@@ -17,8 +17,8 @@
     <!--android:foreground="@drawable/rounded_image"-->
     <ImageView
         android:id="@+id/img_staf"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:foreground="@drawable/rounded_image"
         android:src="@drawable/dummy_photo"
         android:layout_gravity="center"

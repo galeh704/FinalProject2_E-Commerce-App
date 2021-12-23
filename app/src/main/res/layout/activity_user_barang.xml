@@ -28,6 +28,7 @@
                 style="@style/logo"
                 android:src="@drawable/logo2"
                 android:adjustViewBounds="true"
+
                 />
 
         </LinearLayout>
@@ -37,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Testing"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
         <GridView

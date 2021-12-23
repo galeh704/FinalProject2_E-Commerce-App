@@ -22,17 +22,93 @@
             android:src="@drawable/logo2" />
     </LinearLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_gadget"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout"
-        android:background="#2A4A6B" />
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        >
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/pager_gadget"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tab_gadget" />
+        <FrameLayout
+            android:id="@+id/smartphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:src="@drawable/hp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:background="#CC515151"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text"
+                    android:text="Smartphone"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/laptop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:src="@drawable/laptop"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:background="#CC515151"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text"
+                    android:text="Laptop"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+    <!--
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_gadget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout"
+            android:background="#2A4A6B" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager_gadget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_gadget" />
+            -->
 
 </RelativeLayout>

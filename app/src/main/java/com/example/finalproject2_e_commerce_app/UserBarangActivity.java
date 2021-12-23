@@ -47,6 +47,81 @@ public class UserBarangActivity extends AppCompatActivity {
         grid_barang.setAdapter(adapter);
         arrayGridProduct.clear();
 
+        Intent intent = getIntent();
+        String ms = intent.getStringExtra("men_tshirt");
+        String mf = intent.getStringExtra("men_formal");
+        String wf = intent.getStringExtra("women_formal");
+        String ws = intent.getStringExtra("women_tshirt");
+        String p = intent.getStringExtra("pants");
+        String s = intent.getStringExtra("shoes");
+        String ow = intent.getStringExtra("outwear");
+        String books = intent.getStringExtra("books");
+        String toys = intent.getStringExtra("toys");
+        String furniture = intent.getStringExtra("furniture");
+        String others = intent.getStringExtra("others");
+        String laptop = intent.getStringExtra("laptop");
+        String smartphone = intent.getStringExtra("smartphone");
+
+
+
+        if(ms != null){
+            tv_testing.setText(ms);
+
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readbaranguser.php");
+        }
+        if(mf != null){
+
+            tv_testing.setText(mf);
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readmformal.php");
+        }
+        if(wf != null){
+
+            tv_testing.setText(wf);
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwformal.php");
+        }
+        if(ws != null){
+
+            tv_testing.setText(ws);
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwtshirts.php");
+        }
+        if(s != null){
+
+            tv_testing.setText(s);
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readshoes.php");
+        }
+        if(p != null){
+
+            tv_testing.setText(p);
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readpants.php");
+        }
+        if(ow != null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readoutwear.php");
+            tv_testing.setText(ow);
+        }
+        if(books != null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readbooks.php");
+            tv_testing.setText(books);
+        }
+        if(toys != null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readtoys.php");
+            tv_testing.setText(toys);
+        }
+        if(furniture != null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readfurniture.php");
+            tv_testing.setText(furniture);
+        }
+        if(others != null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readothers.php");
+            tv_testing.setText(others);
+        }
+        if(laptop !=null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readlaptop.php");
+            tv_testing.setText(laptop);
+        }
+        if(smartphone !=null){
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readsmartphone.php");
+            tv_testing.setText(smartphone);
+        }
         grid_barang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -57,53 +132,6 @@ public class UserBarangActivity extends AppCompatActivity {
 
             }
         });
-
-
-        Intent intent = getIntent();
-        String ms = intent.getStringExtra("men_tshirt");
-        String mf = intent.getStringExtra("men_formal");
-        String wf = intent.getStringExtra("women_formal");
-        String ws = intent.getStringExtra("women_tshirt");
-        String p = intent.getStringExtra("pants");
-        String s = intent.getStringExtra("shoes");
-        String ow = intent.getStringExtra("outwear");
-
-
-        if(ms != null){
-            tv_testing.setText(ms);
-
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readbaranguser.php");
-        }
-          if(mf != null){
-
-            tv_testing.setText(mf);
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readmformal.php");
-        }
-        if(wf != null){
-
-            tv_testing.setText(wf);
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwformal.php");
-        }
-         if(ws != null){
-
-            tv_testing.setText(ws);
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwtshirts.php");
-        }
-        if(s != null){
-
-            tv_testing.setText(s);
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readshoes.php");
-        }
-         if(p != null){
-
-            tv_testing.setText(p);
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readpants.php");
-        }
-        if(ow != null){
-            retrieveData("https://vacillating-feedbac.000webhostapp.com/readoutwear.php");
-            tv_testing.setText(ow);
-
-        }
 
     }
 

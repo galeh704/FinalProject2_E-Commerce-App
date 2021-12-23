@@ -35,7 +35,7 @@ public class SmartphoneFragment extends Fragment {
     UserProductAdapter adapter;
     Product product;
     GridView gridView;
-    String lalala ="https://vacillating-feedbac.000webhostapp.com/readbaranguser.php";
+    String lalala ="https://vacillating-feedbac.000webhostapp.com/readsmartphone.php";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,11 +47,12 @@ public class SmartphoneFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
 
-
-                startActivity(new Intent(getContext(),DetailProductActivity.class).putExtra("position",position));
+                startActivity(new Intent(getActivity(),DetailProductActivity.class).putExtra("position",item));
             }
         });
+        arrayGridProduct.clear();
         retrieveData();
         return v;
     }

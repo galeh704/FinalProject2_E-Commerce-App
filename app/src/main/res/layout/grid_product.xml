@@ -7,12 +7,16 @@
     android:layout_marginTop="8dp"
 
     >
+
     <ImageView
         android:id="@+id/img_product_grid"
         android:layout_width="168dp"
         android:layout_height="161dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
         android:foreground="@drawable/rounded_image"
-        android:src="@drawable/dummy_photo2"/>
+        android:src="@drawable/dummy_photo2" />
 
     <LinearLayout
         android:layout_width="wrap_content"

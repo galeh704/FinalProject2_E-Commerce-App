@@ -34,7 +34,7 @@ public class LaptopFragment extends Fragment {
     UserProductAdapter adapter;
     Product product;
     GridView gridView;
-    String lalala ="https://vacillating-feedbac.000webhostapp.com/readoutwear.php";
+    String lalala ="https://vacillating-feedbac.000webhostapp.com/readlaptop.php";
 
 
     @Override
