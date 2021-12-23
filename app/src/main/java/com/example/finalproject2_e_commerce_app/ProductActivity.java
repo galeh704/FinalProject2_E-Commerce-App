@@ -42,7 +42,7 @@ public class ProductActivity extends AppCompatActivity {
     ProductAdapter productAdapter;
     public static ArrayList<Product> productArrayList = new ArrayList<>();
     Product product;
-    String url = "https://cisti.studybox.id/testkm/readbaranguser.php";
+    String url = "https://vacillating-feedbac.000webhostapp.com/readbaranguser.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +123,7 @@ public class ProductActivity extends AppCompatActivity {
                                     String kategori = object.getString("kategori");
                                     String gambar = object.getString("gambarProduct");
 
-                                    String url = "https://cisti.studybox.id/testkm/Images/"+ gambar;
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambar;
 
                                     product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     productArrayList.add(product);

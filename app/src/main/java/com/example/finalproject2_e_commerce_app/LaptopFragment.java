@@ -34,7 +34,7 @@ public class LaptopFragment extends Fragment {
     UserProductAdapter adapter;
     Product product;
     GridView gridView;
-    String lalala ="https://cisti.studybox.id/testkm/fashion/readoutwear.php";
+    String lalala ="https://vacillating-feedbac.000webhostapp.com/readoutwear.php";
 
 
     @Override
@@ -76,7 +76,7 @@ public class LaptopFragment extends Fragment {
                                     String deskripsi = object.getString("deskripsi");
                                     String kategori = object.getString("kategori");
                                     String gambar = object.getString("gambarProduct");
-                                    String url = "https://cisti.studybox.id/testkm/Images/"+ gambar;
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambar;
 
                                     product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     arrayGridProduct.add(product);

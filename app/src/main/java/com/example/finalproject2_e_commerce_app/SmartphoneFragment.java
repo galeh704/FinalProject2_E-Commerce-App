@@ -35,7 +35,7 @@ public class SmartphoneFragment extends Fragment {
     UserProductAdapter adapter;
     Product product;
     GridView gridView;
-    String lalala ="https://cisti.studybox.id/testkm/fashion/readbaranguser.php";
+    String lalala ="https://vacillating-feedbac.000webhostapp.com/readbaranguser.php";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class SmartphoneFragment extends Fragment {
                                     String deskripsi = object.getString("deskripsi");
                                     String kategori = object.getString("kategori");
                                     String gambar = object.getString("gambarProduct");
-                                    String url = "https://cisti.studybox.id/testkm/Images/"+ gambar;
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambar;
 
                                     product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     arrayGridProduct.add(product);

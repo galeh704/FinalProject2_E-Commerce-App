@@ -72,35 +72,35 @@ public class UserBarangActivity extends AppCompatActivity {
         if(ms != null){
             tv_testing.setText(ms);
 
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readbaranguser.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readbaranguser.php");
         }
           if(mf != null){
 
             tv_testing.setText(mf);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readmformal.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readmformal.php");
         }
         if(wf != null){
 
             tv_testing.setText(wf);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readwformal.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwformal.php");
         }
          if(ws != null){
 
             tv_testing.setText(ws);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readwtshirts.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readwtshirts.php");
         }
         if(s != null){
 
             tv_testing.setText(s);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readshoes.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readshoes.php");
         }
          if(p != null){
 
             tv_testing.setText(p);
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readpants.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readpants.php");
         }
         if(ow != null){
-            retrieveData("https://cisti.studybox.id/testkm/fashion/readoutwear.php");
+            retrieveData("https://vacillating-feedbac.000webhostapp.com/readoutwear.php");
             tv_testing.setText(ow);
 
         }
@@ -131,7 +131,7 @@ public class UserBarangActivity extends AppCompatActivity {
                                     String deskripsi = object.getString("deskripsi");
                                     String kategori = object.getString("kategori");
                                     String gambar = object.getString("gambarProduct");
-                                    String url = "https://cisti.studybox.id/testkm/Images/"+ gambar;
+                                    String url = "https://vacillating-feedbac.000webhostapp.com/Images/"+ gambar;
 
                                     product = new Product(idProduct,namaProduct, harga, stock, deskripsi, kategori, url);
                                     arrayGridProduct.add(product);
