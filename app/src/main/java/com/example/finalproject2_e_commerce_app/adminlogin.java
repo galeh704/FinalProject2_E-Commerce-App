@@ -28,7 +28,7 @@ public class adminlogin extends AppCompatActivity {
     private EditText admin_username,admin_password;
     private Button bt_adminlogin;
     private String username,password;
-    private String url = "https://vacillating-feedbac.000webhostapp.com/user/adminlogin.php";
+    private final String url = "https://vacillating-feedbac.000webhostapp.com/user/adminlogin.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

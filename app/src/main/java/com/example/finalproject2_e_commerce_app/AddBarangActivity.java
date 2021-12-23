@@ -171,6 +171,12 @@ public class AddBarangActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
+                    params.put("namaProduct", namaP);
+                    params.put("harga", harga);
+                    params.put("stock", stock);
+                    params.put("deskripsi", deskripsi);
+                    params.put("kategori", kategori);
+                    params.put("gambarProduct", encodedImage);
 
                     params.put("namaProduct", namaP);
                     params.put("harga", harga);
