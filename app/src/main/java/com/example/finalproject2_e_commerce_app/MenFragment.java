@@ -1,5 +1,6 @@
 package com.example.finalproject2_e_commerce_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,58 +8,77 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MenFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MenFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+
 
     public MenFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MenFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MenFragment newInstance(String param1, String param2) {
-        MenFragment fragment = new MenFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
+    FrameLayout men_tshirt,men_formal,men_shoes,men_pants,men_outwear;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_men, container, false);
+
+      View v = inflater.inflate(R.layout.fragment_men, container, false);
+      men_tshirt = v.findViewById(R.id.men_tshirt);
+      men_formal = v.findViewById(R.id.men_formal);
+      men_outwear = v.findViewById(R.id.men_outwear);
+      men_pants = v.findViewById(R.id.men_pants);
+      men_shoes = v.findViewById(R.id.men_shoes);
+
+      men_tshirt.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              String kategori2 = "men_tshirt";
+              Intent tshirt = new Intent( getActivity(), UserBarangActivity.class).putExtra("men_tshirt",kategori2);
+              startActivity(tshirt);
+          }
+      });
+      men_shoes.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              String kategori5 = "shoes";
+              Intent shoes = new Intent( getActivity(), UserBarangActivity.class).putExtra("shoes",kategori5);
+              startActivity(shoes);
+          }
+      });
+      men_pants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String kategori4 = "pants";
+                Intent pants = new Intent( getActivity(), UserBarangActivity.class).putExtra("pants",kategori4);
+                startActivity(pants);
+            }
+        });
+      men_outwear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String kategori3 = "outwear";
+                Intent outwear = new Intent( getActivity(), UserBarangActivity.class).putExtra("outwear",kategori3);
+                startActivity(outwear);
+            }
+        });
+      men_formal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String kategori = "men_formal";
+                Intent formal = new Intent( getActivity(), UserBarangActivity.class).putExtra("men_formal",kategori);
+                startActivity(formal);
+            }
+        });
+      return v;
     }
+
 }

@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="178dp"
+    android:layout_width="168dp"
     android:layout_height="365dp"
     android:orientation="vertical"
     android:background="@drawable/rounded_list"
     android:layout_marginTop="8dp"
+
     >
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="171dp"
+
+        android:id="@+id/img_product_grid"
+        android:layout_width="168dp"
+        android:layout_height="161dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:foreground="@drawable/rounded_image"
+
         android:src="@drawable/dummy_photo2" />
 
     <LinearLayout
@@ -17,10 +25,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="12dp"
+        android:paddingBottom="24dp"
         android:layout_marginStart="8dp">
 
         <TextView
-            android:id="@+id/tv_nama"
+            android:id="@+id/tv_id_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            style="@style/main_text"
+            />
+        <TextView
+            android:id="@+id/tv_nama_grid"
             style="@style/textbarang"
             android:text="Sepatu Merah, keren, nyaman"
             />
@@ -35,7 +52,7 @@
                 android:text="Rp"
                 />
             <TextView
-                android:id="@+id/tv_harga"
+                android:id="@+id/tv_harga_grid"
                 style="@style/text"
                 android:text="18.85.0000"
                 android:layout_marginStart="4dp"

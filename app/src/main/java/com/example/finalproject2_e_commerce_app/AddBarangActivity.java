@@ -178,6 +178,12 @@ public class AddBarangActivity extends AppCompatActivity {
                     params.put("kategori", kategori);
                     params.put("gambarProduct", encodedImage);
 
+                    params.put("namaProduct", namaP);
+                    params.put("harga", harga);
+                    params.put("stock", stock);
+                    params.put("deskripsi", deskripsi);
+                    params.put("kategori", kategori);
+                    params.put("gambarProduct", encodedImage);
 
 
                     return params;

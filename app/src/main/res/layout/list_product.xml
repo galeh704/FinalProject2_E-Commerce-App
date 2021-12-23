@@ -14,12 +14,13 @@
         android:visibility="gone"
         style="@style/main_text"
         />
-    <!--android:foreground="@drawable/rounded_image"-->
+
     <ImageView
         android:id="@+id/img_product"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/dummy_photo2"
+
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         />
